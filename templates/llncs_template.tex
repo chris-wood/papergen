@@ -1,0 +1,69 @@
+
+\documentclass{llncs}
+
+\usepackage{todonotes,times}
+\usepackage{algorithm}
+\usepackage{url}
+\usepackage[noend]{algpseudocode}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage{multirow,paralist}
+\usepackage{fancybox}
+
+\newenvironment{fminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+\makeatletter
+%\renewcommand{\ALG@beginalgorithmic}{\scriptsize}
+\makeatother
+
+\newtheorem{defn}{\textbf{Definition}}
+\newtheorem{thm}{\textbf{Theorem}}
+\newtheorem{cor}{\textbf{Corollary}}
+%\newtheorem{lemma}{\textbf{Lemma}}
+
+\begin{document}
+
+\mainmatter              % start of the contributions
+\title{TITLE}
+\titlerunning{TODO}
+
+\author{AUTHOR_NAME}
+\authorrunning{AUTHOR_SURNAME} % abbreviated author list (for running head)
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{AUTHOR_NAME}
+
+\institute{AUTHOR_AFFIL\\
+\email{AUTHOR_EMAIL}
+}
+
+% typeset the title of the contribution
+\maketitle
+
+\begin{abstract}
+TODO
+\end{abstract}
+
+PAPER_MEAT
+
+\begin{algorithm}[t]
+  \caption{Random Algorithm}
+  \begin{algorithmic}[1]
+    % \Require{INPUT}
+
+\Function{{\sf FastAlgorithm}}{$n = [n_1,\dots,n_l]$}
+    \State Do something...
+    \State \textbf{return} Good value...
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+\medskip
+\small
+\bibliographystyle{abbrv}
+\bibliography{FILE_NAME}
+
+\end{document}
