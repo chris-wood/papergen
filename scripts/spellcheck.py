@@ -23,3 +23,14 @@ class SpellChecker(object):
 
                 replacement = failure
                 replacements.append((index, replacement))
+
+def main(args):
+    if len(args) != 1:
+        print >> sys.stderr, "usage: python spellchecker.py <filename>"
+        exit(1)
+    fhandle = open(args[0], "r")
+    # TODO: read the file
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+
