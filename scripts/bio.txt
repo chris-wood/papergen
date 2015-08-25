@@ -1,0 +1,3 @@
+Christopher Wood is a third year Ph.D. student at the University of California Irvine, focusing on the intersection of cryptographic engineering, content-centric networking security, and related applications. He is also a member of the CCNx core development team at PARC. He obtained a B.S. in software engineering and computer science and an M.S. in computer science from the Rochester Institute of Technology (RIT) in 2013. He was a summer intern at PARC in the summers of 2013 and 2014. Earlier, he interned at Intel, L-3 Communications, and other small software firms. Christopher is a recipient of the NSF GRFP fellowship, and a student member of the IEEE, SIAM, ACM, and IACR.
+
+This is a test. Man thsi tst si ful uf erors.
