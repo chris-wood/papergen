@@ -4,6 +4,11 @@ import enchant
 import string
 from terminal import *
 
+# TODO: use pycurses for a nice CLI
+
+class Sentence(object):
+    pass
+
 class SpellChecker(object):
     def __init__(self, dictionary):
         self.dictionary = enchant.Dict(dictionary)
@@ -11,9 +16,9 @@ class SpellChecker(object):
     def printSentenceWithError(self, words, index):
         for wordIndex, word in enumerate(words):
             if index == wordIndex:
-                cprint("red", word[0])
+                cprint("red", word)
             else:
-                cprint("green", word[0])
+                cprint("green", word)
 
     def checkText(self, text):
         sentences = filter(lambda s : len(s) > 0, text.split("\n"))
@@ -30,7 +35,7 @@ class SpellChecker(object):
                 replacement = failure
                 if len(suggestions) > 0:
                     # TODO: need to print the original sentence -- not the reduced verison that has puncuation removed
-                    self.printSentenceWithError(words, index)
+                    self.printSentenceWithError(map(lambda t : t[0], words), index)
 
                     # print failure, index
                     # 1. print out sentence (minus the word) in green, and the word in red
@@ -47,16 +52,14 @@ class SpellChecker(object):
                     if (choice == 0):
                         skipped = True
 
-                    while choice < 0 or choice > (len(suggestions)):
+                    while choice < 0 or choice > len(suggestions):
                         print "Invalid selection. Try again."
                         choice = int(raw_input("> "))
                     if not skipped:
                         replacement = suggestions[int(choice) - 1]
 
-                # TODO: print "replacing <failure> with <selection version>"
                 replacements.append((index, replacement))
-
-                # TODO: replace the word at the index with the replacement
+                words[index] = (replacement, index)
 
 def main(args):
     if len(args) != 1:
