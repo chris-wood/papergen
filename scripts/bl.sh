@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage() { 
+usage() {
     echo "usage: $0 [-s] [-g] [--ps] [--pdf] <tex-prefix>" 1>&2
     exit 1
 }
@@ -52,7 +52,7 @@ echo "Building ${texfile}..."
 # TODO: run tex-parser to get raw text
 
 if [ "$s" -eq 1 ]; then
-    echo spell check... 
+    echo spell check...
     # TODO: run raw text through the spell checker
 fi
 if [ "$g" -eq 1 ]; then
@@ -62,4 +62,3 @@ fi
 
 echo "s = ${s}"
 echo "g = ${g}"
-

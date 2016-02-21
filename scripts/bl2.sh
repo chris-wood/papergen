@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage() { 
+usage() {
     echo "usage: $0 [-s] [-g] [--ps] [--pdf] <tex-prefix>" 1>&2
     exit 1
 }
@@ -29,7 +29,7 @@ while [[ $# -gt 0 ]]; do
         "-g"|"--grammar"  ) GRAMMAR=1; shift ;;
         "-ps"             ) TOPS=1; PSFILE="$1"; shift ;;
         "-pdf"            ) TOPDF=1; PDFFILE="$1"; shift ;;
-        "-f"|"--file"     ) 
+        "-f"|"--file"     )
             # if the next argument is another flag, something's gone wrong
             if [[ "$current_arg" =~ ^-{1,2} ]]; then
                 usage # exits
@@ -44,7 +44,7 @@ echo "Building ${texfile}..."
 # TODO: run tex-parser to get raw text
 
 if [ "$SPELLING" -eq 1 ]; then
-    echo spell check... 
+    echo spell check...
     # TODO: run raw text through the spell checker
 fi
 if [ "$GRAMMAR" -eq 1 ]; then
@@ -53,7 +53,7 @@ if [ "$GRAMMAR" -eq 1 ]; then
 fi
 if [ "$TOPS" -eq 1 ]; then
     echo "generate PS..."
-    echo "PSFILE = ${PSFILE}" 
+    echo "PSFILE = ${PSFILE}"
 fi
 if [ "$TOPDF" -eq 1 ]; then
     echo "generate PDF..."
@@ -62,4 +62,3 @@ fi
 
 echo "SPELLING? = ${SPELLING}"
 echo "GRAMMAR? = ${GRAMMAR}"
-
