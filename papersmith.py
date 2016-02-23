@@ -1,8 +1,0 @@
-import os
-import pymarkdown
-
-def main(args):
-    pass
-
-if __name__ == "__main__":
-    main(sys.argv[1:])
